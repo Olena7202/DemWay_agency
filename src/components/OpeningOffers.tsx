@@ -5,12 +5,9 @@ import { useLocale } from '../i18n/locale'
 type OfferIcon = 'start' | 'grow' | 'rebrand' | 'system'
 
 function OfferPromo({ text }: { text: string }) {
-  const [discount, bonus] = text.split(/\s*·\s*/)
-
   return (
     <p className="offer-card__promo">
-      <span className="offer-card__promo-lead">{discount}</span>
-      {bonus ? <span className="offer-card__promo-bonus">{bonus}</span> : null}
+      <span className="offer-card__promo-bonus">{text}</span>
     </p>
   )
 }
@@ -140,7 +137,6 @@ export function OpeningOffers() {
                 {offers.banner.titleBefore}{' '}
                 <span className="offers__banner-brand">{offers.banner.brand}</span>
               </p>
-              <p className="offers__banner-text">{offers.banner.text}</p>
               <div className="offers__banner-meta">
                 <span className="offers__banner-chip">
                   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -189,6 +185,7 @@ export function OpeningOffers() {
                   {featured ? (
                     <span className="offer-card__glow" aria-hidden="true" />
                   ) : null}
+                  <span className="offer-card__discount">{pack.discount}</span>
                   <div className="offer-card__meta">
                     <p className="offer-card__label">
                       <PackIcon name={pack.icon} />

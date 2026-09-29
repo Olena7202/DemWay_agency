@@ -61,7 +61,6 @@ export type Copy = {
     banner: {
       titleBefore: string
       brand: string
-      text: string
       dates: string
       limit: string
       cta: string
@@ -74,6 +73,7 @@ export type Copy = {
       for: string
       originalPrice: string
       price: string
+      discount: string
       promo: string
       cta: string
       featured?: boolean
@@ -279,7 +279,6 @@ export const copy: Record<Locale, Copy> = {
       banner: {
         titleBefore: 'Спеціальна пропозиція від',
         brand: 'DemWay',
-        text: 'Відкриваємо агенцію зі спеціальними умовами на перші проєкти',
         dates: '01.10 – 31.10',
         limit: 'Лише 10 проєктів',
         cta: 'Дізнатися більше',
@@ -293,7 +292,8 @@ export const copy: Record<Locale, Copy> = {
           for: 'Для бізнесу, який тільки запускається або хоче вибудувати ефективну digital-присутність.',
           originalPrice: '17 500 грн',
           price: '14 875 грн',
-          promo: '−15% · + безкоштовне налаштування Analytics',
+          discount: '−15%',
+          promo: '+ безкоштовне налаштування Analytics',
           cta: 'Запустити проєкт',
           items: [
             'розробка сайту',
@@ -311,7 +311,8 @@ export const copy: Record<Locale, Copy> = {
           for: 'Для бізнесу, який уже працює та хоче системно залучати нових клієнтів.',
           originalPrice: '21 000 грн',
           price: '17 850 грн',
-          promo: '−15% · + безкоштовний remarketing',
+          discount: '−15%',
+          promo: '+ безкоштовний remarketing',
           cta: 'Почати зростання',
           featured: true,
           items: ['Google Ads', 'Meta Ads', 'Аналітика', 'Remarketing', 'A/B тестування'],
@@ -324,7 +325,8 @@ export const copy: Record<Locale, Copy> = {
           for: 'Для бізнесу, якому потрібне сучасніше позиціонування та візуальна присутність.',
           originalPrice: '13 500 грн',
           price: '11 475 грн',
-          promo: '−15% · + мобільна адаптація',
+          discount: '−15%',
+          promo: '+ мобільна адаптація',
           cta: 'Оновити бренд',
           items: [
             'айдентика',
@@ -342,7 +344,8 @@ export const copy: Record<Locale, Copy> = {
           for: 'Для бізнесу, який хоче об’єднати залучення, продажі та роботу з клієнтами в одну систему.',
           originalPrice: '72 000 грн',
           price: '57 600 грн',
-          promo: '−20% · + 1 місяць супроводу',
+          discount: '−20%',
+          promo: '+ 1 місяць супроводу',
           cta: 'Створити систему',
           items: [
             'Сайт',
@@ -722,7 +725,6 @@ export const copy: Record<Locale, Copy> = {
       banner: {
         titleBefore: 'Special offer from',
         brand: 'DemWay',
-        text: 'We’re opening the agency with special terms for the first projects',
         dates: '01.10 – 31.10',
         limit: 'Only 10 projects',
         cta: 'Learn more',
@@ -736,7 +738,8 @@ export const copy: Record<Locale, Copy> = {
           for: 'For businesses that are just launching or want to build an effective digital presence.',
           originalPrice: '17,500 UAH',
           price: '14,875 UAH',
-          promo: '15% off · + free Analytics setup',
+          discount: '−15%',
+          promo: '+ free Analytics setup',
           cta: 'Launch project',
           items: [
             'website development',
@@ -754,7 +757,8 @@ export const copy: Record<Locale, Copy> = {
           for: 'For businesses that already operate and want to systematically attract new clients.',
           originalPrice: '21,000 UAH',
           price: '17,850 UAH',
-          promo: '15% off · + free remarketing',
+          discount: '−15%',
+          promo: '+ free remarketing',
           cta: 'Start growth',
           featured: true,
           items: ['Google Ads', 'Meta Ads', 'Analytics', 'Remarketing', 'A/B testing'],
@@ -767,7 +771,8 @@ export const copy: Record<Locale, Copy> = {
           for: 'For businesses that need more modern positioning and visual presence.',
           originalPrice: '13,500 UAH',
           price: '11,475 UAH',
-          promo: '15% off · + mobile adaptation',
+          discount: '−15%',
+          promo: '+ mobile adaptation',
           cta: 'Refresh brand',
           items: [
             'identity',
@@ -785,7 +790,8 @@ export const copy: Record<Locale, Copy> = {
           for: 'For businesses that want to unite acquisition, sales and client work in one system.',
           originalPrice: '72,000 UAH',
           price: '57,600 UAH',
-          promo: '20% off · + 1 month of support',
+          discount: '−20%',
+          promo: '+ 1 month of support',
           cta: 'Build the system',
           items: [
             'Website',
