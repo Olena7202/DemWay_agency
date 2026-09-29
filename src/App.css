@@ -2850,7 +2850,7 @@ button.teaser-row {
 }
 
 .offers__grid .reveal.is-visible {
-  animation: offers-card-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: offers-card-in 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: var(--reveal-delay, 0ms);
   transition: none;
 }
@@ -2882,35 +2882,35 @@ button.teaser-row {
 .offers__grid .reveal.is-visible .offer-card__cta {
   opacity: 0;
   transform: translateY(12px);
-  animation: offers-copy-in 0.95s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: offers-copy-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .offers__grid .reveal.is-visible .offer-card__meta {
-  animation-delay: calc(var(--reveal-delay, 0ms) + 120ms);
+  animation-delay: calc(var(--reveal-delay, 0ms) + 60ms);
 }
 
 .offers__grid .reveal.is-visible .offer-card h3 {
-  animation-delay: calc(var(--reveal-delay, 0ms) + 200ms);
+  animation-delay: calc(var(--reveal-delay, 0ms) + 110ms);
 }
 
 .offers__grid .reveal.is-visible .offer-card__for {
-  animation-delay: calc(var(--reveal-delay, 0ms) + 270ms);
+  animation-delay: calc(var(--reveal-delay, 0ms) + 160ms);
 }
 
 .offers__grid .reveal.is-visible .offer-card__includes {
-  animation-delay: calc(var(--reveal-delay, 0ms) + 330ms);
+  animation-delay: calc(var(--reveal-delay, 0ms) + 210ms);
 }
 
 .offers__grid .reveal.is-visible .offer-card__items {
-  animation-delay: calc(var(--reveal-delay, 0ms) + 400ms);
+  animation-delay: calc(var(--reveal-delay, 0ms) + 260ms);
 }
 
 .offers__grid .reveal.is-visible .offer-card__price {
-  animation-delay: calc(var(--reveal-delay, 0ms) + 480ms);
+  animation-delay: calc(var(--reveal-delay, 0ms) + 310ms);
 }
 
 .offers__grid .reveal.is-visible .offer-card__cta {
-  animation-delay: calc(var(--reveal-delay, 0ms) + 540ms);
+  animation-delay: calc(var(--reveal-delay, 0ms) + 360ms);
 }
 
 @keyframes offers-card-in {
