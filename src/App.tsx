@@ -128,12 +128,12 @@ function DocumentTitle() {
 
   useEffect(() => {
     const path = location.pathname.replace(/\/$/, '')
+    const seoTitle = path.endsWith('/privacy') ? `${t.legal.title} | DemWay` : t.meta.title
     document.documentElement.lang = locale
     if (path.endsWith('/poslugy')) document.title = `${t.catalog.title} · ${t.meta.tab}`
-    else if (path.endsWith('/privacy')) document.title = `${t.legal.title} · ${t.meta.tab}`
+    else if (path.endsWith('/privacy')) document.title = seoTitle
     else if (path !== '') document.title = `404 · ${t.meta.tab}`
-    else document.title = t.meta.tab
-    const seoTitle = path.endsWith('/privacy') ? `${t.legal.title} | DemWay` : t.meta.title
+    else document.title = seoTitle
     const og = document.querySelector('meta[property="og:title"]')
     if (og) og.setAttribute('content', seoTitle)
     const meta = document.querySelector('meta[name="description"]')

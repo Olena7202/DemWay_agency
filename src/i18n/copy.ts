@@ -181,7 +181,7 @@ export const copy: Record<Locale, Copy> = {
   uk: {
     meta: {
       title: 'Діджитал агенція - розробка сайту, маркетинг, SEO та реклама|DemWay',
-      tab: 'DemWay agency',
+      tab: 'DemWay',
       description:
         'Діджитал агентство DemWay поєднує усе необхідне для розвитку вашого бізнесу. Розробка сайту, SEO, контекстна реклама, Google Ads та email-маркетинг в одному місці. Замовляйте digital-послуги під ключ та зростайте онлайн з нами!',
     },
@@ -626,7 +626,7 @@ export const copy: Record<Locale, Copy> = {
   en: {
     meta: {
       title: 'Digital agency — website development, marketing, SEO and ads | DemWay',
-      tab: 'DemWay agency',
+      tab: 'DemWay',
       description:
         'DemWay digital agency brings together everything you need to grow your business. Website development, SEO, contextual ads, Google Ads and email marketing in one place. Order turnkey digital services and grow online with us.',
     },
