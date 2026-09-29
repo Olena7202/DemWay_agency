@@ -175,8 +175,8 @@ export function OpeningOffers() {
           const featured = Boolean(pack.featured)
           return (
             <li key={pack.id} className="offer-card-slot">
-              <span className="offer-card__discount">{pack.discount}</span>
               <Reveal delay={90 + index * 70} from="up">
+                <span className="offer-card__discount">{pack.discount}</span>
                 <article className={`offer-card${featured ? ' offer-card--hit' : ''}`}>
                   <span className="offer-card__sheen" aria-hidden="true" />
                   <span className="offer-card__orb" aria-hidden="true" />

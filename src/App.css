@@ -2755,7 +2755,8 @@ button.teaser-row {
 .offers__banner-text {
   margin: 0;
   color: var(--cream-dim);
-  font-size: 0.92rem;
+  font-size: 1.1rem;
+  font-weight: 650;
   line-height: 1.5;
 }
 
@@ -2864,6 +2865,10 @@ button.teaser-row {
   transition: none;
 }
 
+.offers__grid .reveal.is-visible .offer-card__discount {
+  animation: offer-discount-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
+}
+
 .offers__head .eyebrow,
 .offers__head h2 {
   opacity: 0;
@@ -2943,6 +2948,17 @@ button.teaser-row {
     opacity: 1;
     filter: blur(0);
     transform: none;
+  }
+}
+
+@keyframes offer-discount-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.3rem) scale(0.75) rotate(30deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(30deg);
   }
 }
 
@@ -3102,8 +3118,13 @@ button.teaser-row {
 @media (prefers-reduced-motion: reduce) {
   .offer-card,
   .offer-card--hit,
-  .offer-card__glow {
+  .offer-card__glow,
+  .offer-card__discount {
     animation: none;
+  }
+
+  .offer-card__discount {
+    opacity: 1;
   }
 }
 
@@ -3134,6 +3155,7 @@ button.teaser-row {
     0 0 28px rgba(var(--pink-rgb), 0.5),
     0 2px 0 rgba(8, 8, 8, 0.8);
   pointer-events: none;
+  opacity: 0;
   transform: rotate(30deg);
 }
 
@@ -3312,8 +3334,9 @@ button.teaser-row {
   position: relative;
   padding-left: 0.85rem;
   color: var(--cream);
-  font-size: var(--text);
+  font-size: clamp(1.05rem, calc(var(--text) + 0.08rem), 1.15rem);
   line-height: 1.55;
+  text-align: left;
 }
 
 .offer-card__items li::before {
