@@ -133,10 +133,7 @@ export function OpeningOffers() {
               </svg>
             </span>
             <div className="offers__banner-copy">
-              <p className="offers__banner-title">
-                {offers.banner.titleBefore}{' '}
-                <span className="offers__banner-brand">{offers.banner.brand}</span>
-              </p>
+              <p className="offers__banner-text">{offers.banner.text}</p>
               <div className="offers__banner-meta">
                 <span className="offers__banner-chip">
                   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
