@@ -8,5 +8,3 @@
 npm install
 npm run dev
 ```
-
-Демо сайту: https://demwayagency-bit.github.io/DemWay/
