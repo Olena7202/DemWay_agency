@@ -5550,7 +5550,6 @@ button.teaser-row {
     scroll-padding-inline: 0;
     scroll-snap-stop: always;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-x;
     scrollbar-width: none;
     padding: 0.1rem 0 0.4rem;
     grid-template-columns: none;
@@ -5581,7 +5580,6 @@ button.teaser-row {
     width: 100%;
     height: auto;
     min-height: 100%;
-    touch-action: pan-x;
     transform: none;
   }
 
@@ -5964,11 +5962,11 @@ button.teaser-row {
   }
 
   .why__point--1 .why__point-title-btn {
-    align-items: flex-end;
+    align-items: flex-start;
   }
 
   .why__point--2 .why__point-title-btn {
-    align-items: flex-start;
+    align-items: flex-end;
   }
 
   .why__point--1 {
@@ -5977,22 +5975,42 @@ button.teaser-row {
   }
 
   .why__point--1 .why__point-meta {
-    left: auto;
-    right: 1.7rem;
+    left: -1.05rem;
+    right: auto;
     bottom: auto;
-    top: calc(50% + 1.05rem);
-    transform: rotate(20deg) translateY(0);
-    max-width: 6.4rem;
-    text-align: right;
+    top: auto;
+    bottom: 1.1rem;
+    transform: rotate(20deg);
+    max-width: 7.8rem;
+    text-align: left;
   }
 
   .why__point--2 .why__point-meta {
+    right: -0.55rem;
+    left: auto;
+    top: auto;
+    bottom: 2.1rem;
+    transform: rotate(20deg);
+    max-width: 7.8rem;
+    text-align: right;
+  }
+
+  .why__point--1 .why__tip {
+    left: 0;
     right: auto;
-    left: 1.15rem;
-    top: 50%;
-    transform: rotate(20deg) translateY(-72%);
-    max-width: 6.2rem;
-    text-align: left;
+    top: auto;
+    bottom: calc(100% + 1.3rem);
+    width: min(13rem, 72vw);
+    max-width: 13rem;
+  }
+
+  .why__point--2 .why__tip {
+    left: auto;
+    right: 1.25rem;
+    top: auto;
+    bottom: calc(100% + 0.1rem);
+    width: min(15rem, 76vw);
+    max-width: 15rem;
   }
 
   .why__point--3 {
@@ -6013,16 +6031,6 @@ button.teaser-row {
     flex-wrap: nowrap;
     align-items: center;
     gap: 0.2rem;
-  }
-
-  .why__point--1 .why__tip {
-    left: auto;
-    right: 0;
-  }
-
-  .why__point--2 .why__tip {
-    left: 0;
-    right: auto;
   }
 
   .why__point--3 .why__tip {
@@ -6665,17 +6673,20 @@ button.teaser-row {
   }
 
   .why__point--1 .why__point-meta {
-    right: 1.55rem;
-    left: auto;
-    top: calc(50% + 0.75rem);
-    transform: rotate(20deg) translateY(0);
-    text-align: right;
+    right: auto;
+    left: -1.05rem;
+    top: auto;
+    bottom: 0.95rem;
+    transform: rotate(20deg);
+    text-align: left;
   }
 
   .why__point--2 .why__point-meta {
-    left: 1.05rem;
-    right: auto;
-    text-align: left;
+    left: auto;
+    right: -0.55rem;
+    top: auto;
+    bottom: 2.3rem;
+    text-align: right;
   }
 
   .why__point--3 {
@@ -6692,8 +6703,26 @@ button.teaser-row {
     font-size: 0.66rem;
   }
 
-  .why__tip {
-    width: min(10.2rem, 60vw);
+  .why__point--1 .why__tip,
+  .why__point--2 .why__tip {
+    width: min(13rem, 76vw);
+    max-width: 13rem;
+  }
+
+  .why__point--1 .why__tip {
+    left: 0;
+    right: auto;
+    top: auto;
+    bottom: calc(100% + 1.4rem);
+  }
+
+  .why__point--2 .why__tip {
+    right: 1.25rem;
+    left: auto;
+    top: auto;
+    bottom: calc(100% + 0.1rem);
+    width: min(15rem, 82vw);
+    max-width: 15rem;
   }
 
   .approach--swipe .approach-pin__sticky {
