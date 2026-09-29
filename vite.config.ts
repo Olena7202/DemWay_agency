@@ -15,7 +15,10 @@ function spaFallback(): Plugin {
 
 export default defineConfig(({ command }) => ({
   plugins: [react(), spaFallback()],
-  base: command === 'build' && process.env.GITHUB_ACTIONS === 'true' ? '/DemWay/' : '/',
+  base:
+    command === 'build' && process.env.GITHUB_ACTIONS === 'true'
+      ? `/${process.env.GITHUB_REPOSITORY?.split('/')[1] ?? 'DemWay_agency'}/`
+      : '/',
   server: {
     host: '127.0.0.1',
     port: 5173,
