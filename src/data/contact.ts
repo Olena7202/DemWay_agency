@@ -1,0 +1,5 @@
+export const contactInbox = 'demway.agency@gmail.com'
+export const telegramHandle = '@DemWay_Team'
+export const telegramUrl = 'https://t.me/DemWay_Team'
+export const instagramUrl = 'https://www.instagram.com/demway.agency/'
+export const facebookUrl = 'https://www.facebook.com/demway.agency'

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="uk" class="is-booting">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="%BASE_URL%favicon.png" />
+    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Діджитал агентство DemWay поєднує усе необхідне для розвитку вашого бізнесу. Розробка сайту, SEO, контекстна реклама, Google Ads та email-маркетинг в одному місці. Замовляйте digital-послуги під ключ та зростайте онлайн з нами!"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600;700;800&family=Golos+Text:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>DemWay agency</title>
+    <meta
+      property="og:title"
+      content="Діджитал агенція - розробка сайту, маркетинг, SEO та реклама|DemWay"
+    />
+    <script>
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
+      var bootHash = location.hash
+      if (!bootHash || bootHash === '#top' || bootHash === '#why') window.scrollTo(0, 0)
+      window.setTimeout(function () {
+        var html = document.documentElement
+        var boot = document.getElementById('boot')
+        if (!boot || html.classList.contains('is-booted')) return
+        html.classList.remove('is-booting')
+        html.classList.add('is-booted')
+        boot.classList.add('is-away')
+        window.setTimeout(function () {
+          boot.remove()
+        }, 800)
+      }, 3200)
+    </script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: #000;
+      }
+      html.is-booting,
+      html.is-booting body {
+        overflow: hidden;
+        height: 100%;
+        overscroll-behavior: none;
+      }
+      #boot {
+        position: fixed;
+        inset: 0;
+        z-index: 80;
+        display: grid;
+        place-items: center;
+        background: #000;
+      }
+      #boot.is-away {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.7s ease;
+      }
+      .boot__core {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: min(58vw, 220px);
+        aspect-ratio: 1;
+      }
+      @media (max-width: 720px) {
+        .boot__core {
+          width: min(46vw, 168px);
+        }
+      }
+      .boot__halo {
+        position: absolute;
+        inset: -0.85rem;
+        border-radius: 50%;
+        border: 1px dashed rgba(114, 130, 94, 0.42);
+        animation: boot-orbit 18s linear infinite;
+      }
+      .boot__halo::after {
+        content: '';
+        position: absolute;
+        top: -0.22rem;
+        left: 50%;
+        width: 0.44rem;
+        height: 0.44rem;
+        margin-left: -0.22rem;
+        border-radius: 50%;
+        background: #72825e;
+        box-shadow: 0 0 12px rgba(114, 130, 94, 0.6);
+      }
+      .boot__disc {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1;
+        overflow: hidden;
+        border-radius: 50%;
+        -webkit-mask-image: radial-gradient(circle closest-side, #000 99.6%, transparent 100%);
+        mask-image: radial-gradient(circle closest-side, #000 99.6%, transparent 100%);
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      .boot__planet,
+      .boot__brand {
+        position: absolute;
+        pointer-events: none;
+      }
+      .boot__planet {
+        inset: 0;
+        border-radius: 50%;
+        background: url('%BASE_URL%logo-moon.png') center / cover no-repeat;
+      }
+      .boot__brand {
+        left: 16%;
+        top: 27%;
+        width: 74%;
+        aspect-ratio: 740 / 414;
+        opacity: 0;
+        transform-origin: 50% 55%;
+        background: url('%BASE_URL%logo-dw.png') center / contain no-repeat;
+        animation: boot-brand-out 1.55s cubic-bezier(0.16, 1.05, 0.28, 1) 0.4s both;
+      }
+      .boot__shield {
+        position: absolute;
+        inset: 0;
+        z-index: 5;
+        border-radius: 50%;
+      }
+      @keyframes boot-orbit {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes boot-brand-out {
+        0% {
+          opacity: 0;
+          transform: translate3d(12%, 10%, -80px) scale(0.18);
+          filter: brightness(0.2);
+        }
+        42% {
+          opacity: 1;
+          filter: brightness(0.72);
+        }
+        100% {
+          opacity: 1;
+          transform: none;
+          filter: none;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .boot__halo,
+        .boot__brand {
+          animation: none;
+        }
+        .boot__brand {
+          opacity: 1;
+          transform: none;
+          filter: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="boot" oncontextmenu="return false">
+      <div class="boot__core">
+        <span class="boot__halo" aria-hidden="true"></span>
+        <div class="boot__disc">
+          <div class="boot__planet"></div>
+          <div class="boot__brand"></div>
+          <span class="boot__shield" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
