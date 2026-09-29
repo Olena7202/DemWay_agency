@@ -8,3 +8,5 @@
 npm install
 npm run dev
 ```
+
+Демо сайту: https://olena7202.github.io/DemWay/
