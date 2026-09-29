@@ -739,11 +739,11 @@ export const copy: Record<Locale, Copy> = {
           promo: '+ free Analytics setup',
           cta: 'Launch project',
           items: [
-            'website development',
-            'basic SEO optimization',
+            'Website development',
+            'Basic SEO optimization',
             'Google Analytics',
             'Google Ads setup',
-            'basic digital strategy consultation',
+            'Basic digital strategy consultation',
           ],
         },
         {
@@ -772,11 +772,11 @@ export const copy: Record<Locale, Copy> = {
           promo: '+ mobile adaptation',
           cta: 'Refresh brand',
           items: [
-            'identity',
-            'website redesign',
-            'mobile adaptation',
+            'Identity',
+            'Website redesign',
+            'Mobile adaptation',
             'SEO for key pages',
-            'site prep for ad launch',
+            'Site prep for ad launch',
           ],
         },
         {
