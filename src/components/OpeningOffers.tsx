@@ -174,7 +174,8 @@ export function OpeningOffers() {
         {offers.items.map((pack, index) => {
           const featured = Boolean(pack.featured)
           return (
-            <li key={pack.id}>
+            <li key={pack.id} className="offer-card-slot">
+              <span className="offer-card__discount">{pack.discount}</span>
               <Reveal delay={90 + index * 70} from="up">
                 <article className={`offer-card${featured ? ' offer-card--hit' : ''}`}>
                   <span className="offer-card__sheen" aria-hidden="true" />
@@ -182,15 +183,14 @@ export function OpeningOffers() {
                   {featured ? (
                     <span className="offer-card__glow" aria-hidden="true" />
                   ) : null}
-                  <span className="offer-card__discount">{pack.discount}</span>
                   <div className="offer-card__meta">
                     <p className="offer-card__label">
                       <PackIcon name={pack.icon} />
                       <span>{pack.label}</span>
+                      {featured ? (
+                        <span className="offer-card__badge">{offers.popular}</span>
+                      ) : null}
                     </p>
-                    {featured ? (
-                      <p className="offer-card__badge">{offers.popular}</p>
-                    ) : null}
                   </div>
                   <h3>{pack.name}</h3>
                   <p className="offer-card__for">{pack.for}</p>

@@ -2844,6 +2844,15 @@ button.teaser-row {
   min-width: 0;
 }
 
+.offers__grid > .offer-card-slot {
+  position: relative;
+  isolation: isolate;
+}
+
+.offers__grid > .offer-card-slot > .offer-card__discount {
+  z-index: 5;
+}
+
 .offers__grid .reveal {
   opacity: 0;
   transform: translateY(22px);
@@ -3106,21 +3115,26 @@ button.teaser-row {
   justify-content: space-between;
   gap: 0.75rem;
   margin: 0 0 0.85rem;
-  padding-top: 1.8rem;
+  padding-top: 0;
 }
 
 .offer-card__discount {
   position: absolute;
-  z-index: 2;
-  top: 0.72rem;
-  right: 1.25rem;
+  z-index: 3;
+  top: 0.05rem;
+  right: -1rem;
   color: #eef5d4;
   font-family: var(--display);
-  font-size: clamp(1.35rem, 1.7vw, 1.7rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.7rem, 2.15vw, 2.15rem);
+  font-weight: 900;
+  letter-spacing: -0.075em;
   line-height: 1;
-  text-shadow: 0 0 18px rgba(var(--pink-rgb), 0.34);
+  text-shadow:
+    0 0 10px rgba(var(--pink-rgb), 0.72),
+    0 0 28px rgba(var(--pink-rgb), 0.5),
+    0 2px 0 rgba(8, 8, 8, 0.8);
+  pointer-events: none;
+  transform: rotate(30deg);
 }
 
 .offer-card__label {
@@ -3146,7 +3160,9 @@ button.teaser-row {
 }
 
 .offer-card__badge {
-  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 0 0.5rem;
   flex-shrink: 0;
   padding: 0.35rem 0.65rem;
   border: none;
