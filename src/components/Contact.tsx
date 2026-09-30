@@ -235,11 +235,6 @@ export function Contact() {
 
     const company = field(data, 'company') || '—'
     const service = field(data, 'service') || direction
-    const channelLabel: Record<Channel, string> = {
-      phone: t.contact.phone,
-      telegram: t.contact.telegram,
-      email: t.contact.email,
-    }
 
     setSending(true)
     setError('')
@@ -269,7 +264,7 @@ export function Contact() {
           company,
           service,
           task,
-          channel: channelLabel[channel],
+          channel,
           contact: replyValue,
         }),
       ])
