@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { contactInbox } from '../data/contact'
 import { serviceGroups, services } from '../data/services'
 import { Reveal } from './Reveal'
-import { sendBriefToTelegram } from '../data/telegram'
+import { sendBrief } from '../data/submission'
 import { useLocale } from '../i18n/locale'
 import { localizeService } from '../i18n/services'
 import type { Copy, Locale } from '../i18n/copy'
@@ -54,36 +53,6 @@ function serviceFromPaket(paket: string, t: Copy, locale: Locale) {
   const titled = services.find((service) => localizeService(service, locale).title === key)
   if (titled) return localizeService(titled, locale).title
   return key
-}
-
-function isActivateMessage(message: string) {
-  return /activat/i.test(message)
-}
-
-async function sendBriefToMail(payload: Record<string, string>) {
-  try {
-    const response = await fetch(`https://formsubmit.co/ajax/${contactInbox}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify(payload),
-    })
-    const raw = await response.text()
-    let result: { success?: string | boolean; message?: string } = {}
-    try {
-      result = JSON.parse(raw) as { success?: string | boolean; message?: string }
-    } catch {
-      return false
-    }
-    const ok = result.success === true || result.success === 'true'
-    if (ok) return true
-    if (isActivateMessage(String(result.message ?? ''))) return false
-    return false
-  } catch {
-    return false
-  }
 }
 
 function ServiceSelect({
@@ -239,37 +208,10 @@ export function Contact() {
     setSending(true)
     setError('')
 
-    const payload: Record<string, string> = {
-      _subject: `DemWay: запит від ${name}`,
-      _template: 'table',
-      _captcha: 'false',
-      _honey: '',
-      "Ім'я": name,
-      Компанія: company,
-      Послуга: service,
-      Задача: task,
-      'Канал відповіді': channel,
-      Контакт: replyValue,
-    }
-
-    if (channel === 'email') {
-      payload._replyto = replyValue
-    }
-
     try {
-      const [mailOk, telegramOk] = await Promise.all([
-        sendBriefToMail(payload),
-        sendBriefToTelegram({
-          name,
-          company,
-          service,
-          task,
-          channel,
-          contact: replyValue,
-        }),
-      ])
+      const result = await sendBrief({ name, company, service, task, channel, contact: replyValue })
 
-      if (mailOk || telegramOk) {
+      if (result.ok) {
         setSent(true)
         return
       }
