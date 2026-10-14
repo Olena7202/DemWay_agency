@@ -60,7 +60,6 @@ export type Copy = {
     note: string
     banner: {
       text: string
-      dates: string
       limit: string
       cta: string
     }
@@ -277,7 +276,6 @@ export const copy: Record<Locale, Copy> = {
       note: 'Ціни орієнтовні та коригуються під кожен запит.\nМедіабюджет реклами, хостинг і домен — не входять у вартість.',
       banner: {
         text: 'Спеціальні умови для перших проєктів',
-        dates: '01.10 – 31.10',
         limit: 'Лише 10 проєктів',
         cta: 'Дізнатися більше',
       },
@@ -722,7 +720,6 @@ export const copy: Record<Locale, Copy> = {
       note: 'Prices are estimates and are adjusted to each project request.\nAd spend, hosting and domain are not included.',
       banner: {
         text: 'Special terms for the first projects',
-        dates: '01.10 – 31.10',
         limit: 'Only 10 projects',
         cta: 'Learn more',
       },

@@ -137,19 +137,6 @@ export function OpeningOffers() {
               <div className="offers__banner-meta">
                 <span className="offers__banner-chip">
                   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <circle cx="8" cy="8" r="5.4" stroke="currentColor" strokeWidth="1.3" />
-                    <path
-                      d="M8 5.2V8.2l2 1.3"
-                      stroke="currentColor"
-                      strokeWidth="1.3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  {offers.banner.dates}
-                </span>
-                <span className="offers__banner-chip">
-                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
                     <circle cx="8" cy="5.4" r="2.1" stroke="currentColor" strokeWidth="1.3" />
                     <path
                       d="M3.6 13c.7-2.1 2.3-3.2 4.4-3.2s3.7 1.1 4.4 3.2"
